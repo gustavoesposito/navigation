@@ -1,33 +1,40 @@
  import React from 'react'
+ import { StyleSheet, Text, View, Image } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
-import { BottomTabView, createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+ 
+import AppPrincipal from './src/pages/AppPrincipal';
+import List from './src/pages/List';
 
-import AppContacts from './src/pages/AppContacts'
-import Contacts from './src/pages/Contacts'
-import Information from './src/pages/Information'
-
-const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
-
-
+ 
 function Tabs(){
   return(
     <Tab.Navigator>
-      <Tab.Screen name="AppContacts" component={AppContacts}/>
-      <Tab.Screen name="Contacts" component={Contacts}/>
+      <Tab.Screen name='AppPrincipal' component={ AppPrincipal}/>
     </Tab.Navigator>
   )
 }
+ 
 
  export default function app(){
   return(
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="AppContacts" component={Tabs}/>
-        <Stack.Screen name="Information" component={Information}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <View>
+         <Text>oi</Text>
+      </View>
+    
+     
   )
  }
+
+ const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    },
+   
+    
+});
